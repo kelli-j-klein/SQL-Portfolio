@@ -1,3 +1,4 @@
+
 CREATE TABLE plants (id INTEGER PRIMARY KEY, name TEXT, quantity INTEGER, price INTEGER);
 
 INSERT INTO plants VALUES (1, "sting of turtles", 12, 25);
