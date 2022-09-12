@@ -1,0 +1,54 @@
+CREATE TABLE plants (id INTEGER PRIMARY KEY, name TEXT, quantity INTEGER, price INTEGER);
+
+INSERT INTO plants VALUES (1, "sting of turtles", 12, 25);
+INSERT INTO plants VALUES (2, "peperomia", 9, 49);
+INSERT INTO plants VALUES (3, "philodendron", 4, 185);
+INSERT INTO plants VALUES (4, "pothos", 7, 62);
+INSERT INTO plants VALUES (5, "ficus", 9, 325);
+INSERT INTO plants VALUES (6, "fiddle leaf figs", 13, 240);
+INSERT INTO plants VALUES (7, "calathea", 4, 80);
+INSERT INTO plants VALUES (8, "monstera", 6, 90);
+INSERT INTO plants VALUES (9, "hoya", 5, 92);
+INSERT INTO plants VALUES (10, "staghorn", 2, 63);
+INSERT INTO plants VALUES (11, "fittonia", 1, 31);
+INSERT INTO plants VALUES (12, "sanservieria", 2, 120);
+INSERT INTO plants VALUES (13, "string of pearls", 8, 38);
+
+SELECT * FROM plants;
+
+
+-- Most expensive plant was the ficus at 325 dollars
+
+SELECT * 
+FROM plants 
+ORDER BY price DESC
+LIMIT 1;
+
+
+-- There are 82 items total
+
+SELECT SUM(quantity) 
+FROM plants;
+
+
+-- There are 13 rows of plants
+
+SELECT COUNT(*) 
+FROM plants;
+
+-- Is it sting or string of turtles? 
+
+SELECT * 
+FROM plants 
+WHERE name LIKE 'st% of turtles';
+
+-- What is the average price of plants in the entire store?
+
+SELECT ROUND(AVG(price),2) 
+FROM plants;
+
+#Output is 107.69 dollars
+
+
+
+
