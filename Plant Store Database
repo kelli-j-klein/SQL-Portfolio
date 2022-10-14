@@ -48,7 +48,7 @@ WHERE name LIKE 'st% of turtles';
 SELECT ROUND(AVG(price),2) 
 FROM plants;
 
-#Output is 107.69 dollars
+--Output is 107.69 dollars
 
 
 
