@@ -1,5 +1,7 @@
-/*  Team with highest average weight of its batters in a single year */
-/*  Joining three tables (people, batting, teams) */
+/*  
+Team with highest average weight of its batters in a single year 
+Joining three tables (people, batting, teams) 
+*/
 
 SELECT batting.yearid, ROUND(AVG(people.weight),2), teams.name 
 FROM people
@@ -11,7 +13,9 @@ GROUP BY batting.yearid, teams.id
 ORDER BY batting.yearid DESC, ROUND(AVG(people.weight),2) DESC;
 
 
-/* Team with smallest average height of its batters in a given year */
+/* 
+Team with smallest average height of its batters in a given year 
+*/
 
 SELECT batting.yearid, ROUND(AVG(people.height),2), teams.name
 FROM people
@@ -23,7 +27,9 @@ GROUP BY batting.yearid, teams.name
 ORDER BY 1 DESC, 2 ASC;
 
 
-/* Team with the largest total salary of all players in a given year */
+/* 
+Team with the largest total salary of all players in a given year 
+*/
 
 SELECT salaries.yearid, SUM(salary), teams.name
 FROM salaries
@@ -33,8 +39,10 @@ GROUP BY teams.name, salaries.yearid
 ORDER BY 1 DESC, 2 DESC;
 
 
-/*  Team with smallest cost per win in 2010 */
-/*  Total salary divided by number of wins in a given year */
+/*  
+Team with smallest cost per win in 2010
+Total salary divided by number of wins in a given year 
+*/
 
 SELECT salaries.yearid, teams.name, teams.w, ROUND(SUM(salary)/teams.w) 
 FROM salaries
@@ -45,8 +53,10 @@ GROUP BY teams.name,salaries.yearid, teams.w
 ORDER BY 4 ASC;
 
 
-/* Which pitcher cost the most money per game where they were starting pitcher, in a given year */
-/* Had to of started at least 10 games */
+/* 
+Which pitcher cost the most money per game where they were starting pitcher, in a given year
+Had to of started at least 10 games 
+*/
 
 SELECT salaries.yearid, ROUND(salaries.salary / pitching.g) AS "Paid Per Game", 
 pitching.g AS "games played", pitching.gs AS "games started", people.namefirst, people.namelast
