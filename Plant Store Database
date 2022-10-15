@@ -15,6 +15,7 @@ INSERT INTO plants VALUES (11, "fittonia", 1, 31);
 INSERT INTO plants VALUES (12, "sanservieria", 2, 120);
 INSERT INTO plants VALUES (13, "string of pearls", 8, 38);
 
+
 SELECT * FROM plants;
 
 
