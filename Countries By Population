@@ -1,3 +1,11 @@
+/*
+ Countries and dependent territories, 2020
+ Data adapted from
+ http://www.worldometers.info/world-population/population-by-country/
+ Does not include rows which had "N.A." values, so some territories are missing.
+ */
+
+
 CREATE TABLE countries(
    name                    TEXT PRIMARY KEY,
    population              INTEGER,
@@ -212,6 +220,7 @@ INSERT INTO countries(name,population,percent_one_year_change,population_change,
 INSERT INTO countries(name,population,percent_one_year_change,population_change,density_per_sq_km,area_sq_km,net_migrants,fertility_rate,median_age,percent_of_world_pop) VALUES ('Seychelles',98347,0.62,608,214,460,-200,2.50,34.00,0);
 INSERT INTO countries(name,population,percent_one_year_change,population_change,density_per_sq_km,area_sq_km,net_migrants,fertility_rate,median_age,percent_of_world_pop) VALUES ('Antigua and Barbuda',97929,0.84,811,223,440,0,2.00,34.00,0);
 
+-- Data above from Khan Academy
 
 SELECT name, MAX(population) FROM countries;
 
